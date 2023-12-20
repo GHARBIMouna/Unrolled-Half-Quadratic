@@ -1,7 +1,7 @@
 # An Unrolled Half-Quadratic Approach for Sparse Signal Recovery in Spectroscopy
 
 
-* **License**: 
+  
 * **Author**: Mouna Gharbi
 * **Instituition**:  Centre de Vision Numérique, CentraleSupélec, Inria, Université Paris-Saclay
 * **Email**: mouna.gharbi@centralesupelec.fr
