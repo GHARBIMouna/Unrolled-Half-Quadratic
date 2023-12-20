@@ -2,7 +2,7 @@
 
 
   
-* **Author**: Mouna Gharbi
+* **Authors**: Mouna Gharbi, Emilie Chouzenoux, Jean-Christophe Pesquet
 * **Instituition**:  Centre de Vision Numérique, CentraleSupélec, Inria, Université Paris-Saclay
 * **Email**: mouna.gharbi@centralesupelec.fr
 * **Related Publication**: This is the source repository of the following work
@@ -36,7 +36,30 @@ Pytorch 1.8.0
 
 
     
-### Quick demo
+### How to run
 
-`demo.ipynb`: Tests pre-trained U-HQ and illustrates how to perform training.
+Make sure that PyTorch is available in your Python environment. The code has been tested with Python 3.8.5 and PyTorch 1.8.0.
+
+In order to create data, please refer to the `.csv` file and use `create_data.py`.
+To create a dataset named `Dataset1` with specified train, test and validation sizes run:
+```bash
+python ./Datasets/Create_Data.py --Dataset Dataset1 ..sth that works
+```
+In case the exact datasets used in the paper are 
+required, contact me via email.
+
+In order to run an experiment with the generated datasets, execute the 
+respective Python scripts.
+For example, unrolled half-quadratic goes as
+```bash
+python ./Unrolled_methods/U_HQ/runfile.py --Dataset Dataset1 ...
+```
+To see the exact command-line parameters available 
+for each method check the corresponding files:
+
+|Algorithm| Script to run|
+|--|--|
+|Unrolled Half-Quadratic|`Unrolled_methods/U_HQ/runfile.py`|...|
+|Unrolled ISTA|`Unrolled_methods/U_ISTA/runfile.py`|
+
 

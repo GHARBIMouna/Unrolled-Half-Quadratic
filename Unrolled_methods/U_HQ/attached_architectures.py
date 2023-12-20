@@ -16,19 +16,12 @@ class R_Arch(torch.nn.Module):
         self.architecture = Arch
 
         if self.architecture == 'lambda_Arch1':
-            # self.lamda_cvx = nn.Parameter(
-            #     torch.FloatTensor([1]).cuda(), requires_grad=True)
-            # self.lamda_ncvx = nn.Parameter(
-            #     torch.FloatTensor([1]).cuda(), requires_grad=True)
-            # self.gamma = nn.Parameter(
-            #     torch.FloatTensor([1]).cuda(), requires_grad=True)
-            
             self.lamda_cvx = nn.Parameter(
-                torch.FloatTensor([1]), requires_grad=True)
+                torch.FloatTensor([1]).cuda(), requires_grad=True)
             self.lamda_ncvx = nn.Parameter(
-                torch.FloatTensor([1]), requires_grad=True)
+                torch.FloatTensor([1]).cuda(), requires_grad=True)
             self.gamma = nn.Parameter(
-                torch.FloatTensor([1]), requires_grad=True)
+                torch.FloatTensor([1]).cuda(), requires_grad=True)
 
         if self.architecture == 'lambda_Arch2':
             self.fc_cvx = nn.Linear(2049, 1, bias=False)

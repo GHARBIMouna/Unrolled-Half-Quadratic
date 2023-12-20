@@ -14,7 +14,6 @@ import torch.nn.functional as FF
 from modules import MyDataset
 
 
-
 class U_HQ_class(nn.Module):
     def __init__(self, initializations, train_conditions, test_conditions, number_penalization, number_penalization1, folders, mode):
         super(U_HQ_class, self).__init__()
@@ -27,13 +26,12 @@ class U_HQ_class(nn.Module):
         self.mode = mode
         self.number_penalization = number_penalization
         self.number_penalization1 = number_penalization1
-        # self.dtype = torch.cuda.FloatTensor
-        self.dtype = torch.FloatTensor
+        self.dtype = torch.cuda.FloatTensor
 
         self.model = myModel(self.number_layers, self.L, self.delta_s,
                              self.delta_s1, self.mode, self.number_penalization,
-                             self.number_penalization1, self.architecture_lambda)
-        # .cuda()
+                             self.number_penalization1, self.architecture_lambda).cuda()
+
         self.loss_fun = nn.MSELoss()
 
     def CreateLoader(self, need_names, path_set=None):
@@ -125,7 +123,7 @@ class U_HQ_class(nn.Module):
                                         str(self.architecture_lambda) + '\n',
                                         ])
                 file_object.close()
-           
+
             self.CreateLoader(need_names=need_names)
             loss_epochs = []
             val_loss_epochs = []
@@ -410,10 +408,9 @@ class U_HQ_class(nn.Module):
         plt.show()
         plt.close()
 
-
     def plot_lambda(self, path_model):
-        N = 10 #overparametrization parameter
-        if  self.mode == "learning_lambda_MM":
+        N = 10  # overparametrization parameter
+        if self.mode == "learning_lambda_MM":
             checkpoint = torch.load(path_model)
             self.model.load_state_dict(checkpoint['model_state_dict'])
             list_lambda_k_cvx = []
@@ -471,7 +468,6 @@ class U_HQ_class(nn.Module):
 
                 list_lambda_k_cvx, list_lambda_k_ncvx, list_gamma_k = self.test(
                     path_set=self.path_test, path_model=path_model, need_names="no", save_estimate=False, Disp_param=True)
-           
 
             plt.figure(figsize=(6.7, 4), dpi=200)
             plt.plot(list_lambda_k_cvx, color='red', marker='o',
@@ -482,7 +478,7 @@ class U_HQ_class(nn.Module):
             plt.grid(linestyle='-', linewidth=0.5)
             plt.show()
             plt.savefig(os.path.join(os.path.split(path_model)[0], str(os.path.split(
-                os.path.split(path_model)[0])[1]),"_lambda_k_cvx.png"), bbox_inches="tight")
+                os.path.split(path_model)[0])[1]), "_lambda_k_cvx.png"), bbox_inches="tight")
             plt.close()
 
             plt.figure(figsize=(6.7, 4), dpi=200)
@@ -495,7 +491,7 @@ class U_HQ_class(nn.Module):
             plt.grid(linestyle='-', linewidth=0.5)
             plt.show()
             plt.savefig(os.path.join(os.path.split(path_model)[0],  str(os.path.split(os.path.split(
-                path_model)[0])[1]),"_lambda_k_ncvx.png"), bbox_inches="tight")
+                path_model)[0])[1]), "_lambda_k_ncvx.png"), bbox_inches="tight")
             plt.close()
 
             plt.figure(figsize=(6.7, 4), dpi=200)
@@ -508,7 +504,5 @@ class U_HQ_class(nn.Module):
             plt.grid(linestyle='-', linewidth=0.5)
             plt.show()
             plt.savefig(os.path.join(os.path.split(path_model)[0], str(os.path.split(
-                os.path.split(path_model)[0])[1]),"_gamma_k.png"), bbox_inches="tight")
+                os.path.split(path_model)[0])[1]), "_gamma_k.png"), bbox_inches="tight")
             plt.close()
-
-        
