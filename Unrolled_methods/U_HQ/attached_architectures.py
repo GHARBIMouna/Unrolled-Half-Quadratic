@@ -16,6 +16,7 @@ class R_Arch(torch.nn.Module):
         self.architecture = Arch
 
         if self.architecture == 'lambda_Arch1':
+            #U-HQ-FixN
             self.lamda_cvx = nn.Parameter(
                 torch.FloatTensor([1]).cuda(), requires_grad=True)
             self.lamda_ncvx = nn.Parameter(
@@ -141,6 +142,7 @@ class R_Arch(torch.nn.Module):
                 torch.FloatTensor([1]).cuda(), requires_grad=True)
 
         if self.architecture == 'lamda_Arch1_overparam':
+            #U-HQ-FixN-OverP
             self.lamda_cvx_1 = nn.Parameter(
                 torch.FloatTensor([1]).cuda(), requires_grad=True)
             self.lamda_cvx_2 = nn.Parameter(
@@ -205,6 +207,7 @@ class R_Arch(torch.nn.Module):
                 torch.FloatTensor([1]).cuda(), requires_grad=True)
 
         if self.architecture == 'lamda_Arch2_overparam':
+            #U-HQ
             self.fc_cvx = nn.Linear(2049, 1, bias=True)
             torch.nn.init.uniform_(self.fc_cvx.weight, a=0.001, b=0.002)
 

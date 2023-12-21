@@ -19,8 +19,8 @@ parser.add_argument('--delta_ncvx', type=str,default=1,help="smoothing parameter
 parser.add_argument('--architecture_lambda', type=str, required=True, help="Name of architecture learning regularization and stepsize")
 parser.add_argument('--epochs', type=int, default=150, help="Maximal number of epochs")
 parser.add_argument('--lr', type=float, default=10e-2, help="learning rate")
-parser.add_argument('--train_batch_size', type=int, default=1, help="training batch size")
-parser.add_argument('--val_batch_size', type=int, default=1, help="validation batch size")
+parser.add_argument('--train_batch_size', type=int, default=5, help="training batch size")
+parser.add_argument('--val_batch_size', type=int, default=5, help="validation batch size")
 parser.add_argument('--test_batch_size', type=int, default=1, help="test batch size")
 
 
