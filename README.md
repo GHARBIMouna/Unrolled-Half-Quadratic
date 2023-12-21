@@ -37,7 +37,7 @@ for each method check the corresponding files:
 
 |Method| Script to run|
 |--|--|
-|Iterative Half-Quadratic|`Itertaive_methods/HQ.py`|
+|Iterative Half-Quadratic|`Iterative_methods/HQ.py`|
 |Unrolled Half-Quadratic|`Unrolled_methods/U_HQ/runfile.py`|
 |Unrolled ISTA|`Unrolled_methods/U_ISTA/runfile.py`|
 |Unrolled PD|`Unrolled_methods/U_PD/runfile.py`|
@@ -70,5 +70,10 @@ The repository is organized as follows:
 
 ### Acknowledgements
 The comparisons with the ResUNet method are based on the code of Conor C. Horgan (see [github repo](https://github.com/conor-horgan/DeepeR.git)) and all experiments are run on mass spectrometry data from [MassBank](https://massbank.eu/MassBank/Search).
+
+This work has been supported by the ITN-ETN project TraDE-OPT funded
+by the European Union's Horizon 2020 research and innovation programme
+under the Marie Sklodowska-Curie grant agreement No 861137 and by
+the European Research Council Starting Grant MAJORIS ERC-2019-STG850925.
 
 
