@@ -69,7 +69,7 @@ The repository is organized as follows:
 
 * `Chromatography_Toolbox`: This is a tool that allows us to build simulated chromatographic datasets. This tool was not used in the experiments of the aforementioned paper but it can be useful to provide simulated datasets for the user. For more information please check the [description](https://github.com/GHARBIMouna/Unrolled-Half-Quadratic/tree/main/Chromatography_Toolbox#readme)
 
-### Acknowle>dgements
+### Acknowledgements
 The comparisons with the ResUNet method are based on the code of Conor C. Horgan (see [github repo](https://github.com/conor-horgan/DeepeR.git)) and all experiments are run on mass spectrometry data from [MassBank](https://massbank.eu/MassBank/Search).
 
 This work has been supported by the ITN-ETN project TraDE-OPT funded
