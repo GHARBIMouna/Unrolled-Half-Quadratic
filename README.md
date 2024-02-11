@@ -62,12 +62,12 @@ The repository is organized as follows:
 * Iterative methods:
     * `HQ.py: performs grid search and tests Half-Quadratic variants HQ-SC and HQ-ES.
 
-* Unrolled methods:
+* `Unrolled methods`:
     * `U_HQ`: trains and tests all variants of the unrolled Half-Quadratic paradigm: U-HQ-DE, U-HQ-FixS, U-HQ-FixN and U-HQ-FixN-Over-P.
     * `U_PD`: trains and tests unrolled primal-dual algorithm.
     * `U_ISTA`: trains and tests unrolled iterative soft thresholding algorithm.
 
-* Chromatography_Toolbox: This is a tool that allows us to build simulated chromatographic datasets. This tool was not used in the experiments of the aforementioned paper but it can be useful to provide simulated datasets for the user. For more information please check the 
+* `Chromatography_Toolbox`: This is a tool that allows us to build simulated chromatographic datasets. This tool was not used in the experiments of the aforementioned paper but it can be useful to provide simulated datasets for the user. For more information please check the [description](https://github.com/GHARBIMouna/Unrolled-Half-Quadratic/tree/main/Chromatography_Toolbox#readme)
 
 ### Acknowle>dgements
 The comparisons with the ResUNet method are based on the code of Conor C. Horgan (see [github repo](https://github.com/conor-horgan/DeepeR.git)) and all experiments are run on mass spectrometry data from [MassBank](https://massbank.eu/MassBank/Search).
