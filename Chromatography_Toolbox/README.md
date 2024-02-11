@@ -9,3 +9,9 @@ In order to create data for training named `Dataset1`, provide the training, val
 ```bash
 python ./Chromatography_Toolbox/Create_Dataset.py --Dataset Dataset1 --N_tr 900 --N_val 100 --N_test 100 --a 0.2 --percentage 0.003 --sG 0.02 --peak_inter_dist 3
 ```
+
+In order to use **HALmetrics**, the chemically-driven metrics that rely on the determination of height, location and area of predicted peak, we assume the user has access to a folder `Rec_Signals` containing predicted signals. please refer to `Evaluate_Halmetrics.py` to give the correct paths. Run
+
+```bash
+python ./Chromatography_Toolbox/Evaluate_Halmetrics.py 
+```
