@@ -52,7 +52,7 @@ The repository is organized as follows:
 
 * `Datasets`
 
-   *  `MSdata.csv`: contains original data.
+   *  `MSdata.csv`: contains original **Mass Spectrometry** data.
    *  `Create_Data.py`: creates datasets with different blur kernels and noise levels. A Dataset folder contains  respectively training, validation and test subfolders. Each of these folders contains a `Groundtruth`, `Degraded`, `Degraded2000` and `H` folders. To reproduce  `Dataset1` from the paper, create respectively $900$, $100$ and $100$ `training`, `validation` and `test` samples. `Groundtruth` signals $\overline{x}$ (of size $n=2000$) have a monoisotopic mass-to-charge ratio $m/z$ between $0$ and $200$ ppm. `Degraded` signals $y$ (of size m=2049) are created through a convolution (mode=Full) with a varying Ricker kernel `H` with spreading factor unifromly between $0.25$ and $1$. Finally, a standrad Gaussian noise, with a noise variance uniformly sampled between $0$ amd $0.5$ is added. `Degraded` is used for unrolled, FCNet and AE trainings. `Degraded2000` (convolution mode=same) is used for ResUNet training.
   Dataset2 contains respectively $900$, $100$ and $100$ `training`, `validation` and `test` samples. `Groundtruth` signals $\overline{x}$ (of size $n=2000$) have a monoisotopic mass-to-charge ratio $m/z$ between $0$ and $200$ ppm. `Degraded` signals $y$ (of size m=2049) are created through a convolution (mode=Full) with a varying Ricker kernel `H` with spreading factor unifromly between $0.25$ and $1$. Finally, a standrad Gaussian noise, with a noise variance uniformly sampled between $0.5$ amd $1$ is added. `Degraded` is used for unrolled, FCNet and AE trainings. `Degraded2000` (convolution mode=same) is used for ResUNet training.Dataset3 contains respectively $900$, $100$ and $100$ `training`, `validation` and `test` samples. `Groundtruth` signals $\overline{x}$ (of size $n=2000$) have a monoisotopic mass-to-charge ratio $m/z$ between $0$ and $200$ ppm. `Degraded` signals $y$ (of size m=2049) are created through a convolution (mode=Full) with a varying Fraser Suzuki kernel `H` with spreading factor unifromly between $0.25$ and $1$ and an asymmetry factor between $0.2$ and $0.6$. Finally, a standrad Gaussian noise, with a noise variance uniformly sampled between $0$ amd $0.5$ is added. `Degraded` is used for unrolled, FCNet and AE trainings. `Degraded2000` (convolution mode=same) is used for ResUNet training.
 
@@ -60,15 +60,16 @@ The repository is organized as follows:
     * `FCNet_AE`: trains and tests  fully connected and autoencoder-like architectures.
     * `ResUNet`: trains and tests a residual UNet architecture as in the code in [this repository ](https://github.com/conor-horgan/DeepeR.git).
 * Iterative methods:
-    * `HQ.py`: performs gridsearch and tests Half-Quadratic variants HQ-SC and HQ-ES.
+    * `HQ.py: performs grid search and tests Half-Quadratic variants HQ-SC and HQ-ES.
 
 * Unrolled methods:
-    * `U_HQ`: trains and tests  all variants of the unrolled Half-Quadratic paradigm: U-HQ-DE, U-HQ-FixS, U-HQ-FixN and U-HQ-FixN-Over-P.
-    * `U_PD`: trains and tests unrolled primal dual algorithm.
-    * `U_ISTA`: trains and tests unrolled iterative soft threshholding algorithm.
+    * `U_HQ`: trains and tests all variants of the unrolled Half-Quadratic paradigm: U-HQ-DE, U-HQ-FixS, U-HQ-FixN and U-HQ-FixN-Over-P.
+    * `U_PD`: trains and tests unrolled primal-dual algorithm.
+    * `U_ISTA`: trains and tests unrolled iterative soft thresholding algorithm.
 
+* Chromatography_Toolbox: This is a tool that allows us to build simulated chromatographic datasets. This tool was not used in the experiments of the aforementioned paper but it can be useful to provide simulated datasets for the user. For more information please check the 
 
-### Acknowledgements
+### Acknowle>dgements
 The comparisons with the ResUNet method are based on the code of Conor C. Horgan (see [github repo](https://github.com/conor-horgan/DeepeR.git)) and all experiments are run on mass spectrometry data from [MassBank](https://massbank.eu/MassBank/Search).
 
 This work has been supported by the ITN-ETN project TraDE-OPT funded
